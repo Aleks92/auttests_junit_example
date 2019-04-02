@@ -1,11 +1,11 @@
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import static org.assertj.core.api.Assertions.*;
+
 
 import java.util.Arrays;
 import java.util.Collection;
-
-import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class CalculatorSubTest {
@@ -29,9 +29,8 @@ public class CalculatorSubTest {
     public void calculatorSubshouldSubTwoNumbers() {
         Calculator calculator = new Calculator();
         int actual = calculator.sub(a, b);
-        assertEquals(expected, actual);
-
-
+        //assertEquals(expected, actual);
+        assertThat(actual).isEqualTo(expected);
     }
 
 }
